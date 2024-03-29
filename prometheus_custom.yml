@@ -21,7 +21,7 @@ scrape_configs:
 
   - job_name: 'SNMP ONE621'
     static_configs:
-    - targets: ['192.168.4.1']
+    - targets: ['192.168.2.99']
       labels:
         job: 'One621'
     metrics_path: /snmp
