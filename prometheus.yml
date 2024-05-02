@@ -7,7 +7,7 @@ datasources:
 - name: Prometheus
   type: prometheus
   access: proxy
-  url: http://192.168.2.99:9116/prometheus
+  url: http://prometheus:9090/prometheus # Datasource is in Prometheus container - docker will find it
   isDefault: true
   version: 1
   editable: true
