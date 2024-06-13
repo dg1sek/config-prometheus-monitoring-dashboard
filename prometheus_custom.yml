@@ -60,8 +60,3 @@ scrape_configs:
         type: 'A'
         port: 9100    
 
-# This section defines recording and alerting rules.        
-rules:
-  - record: power_usage_watts_total
-    expr: sum(node_hwmon_power_watt{chip!="unknown"}) * 60
-    lan: exemplars
