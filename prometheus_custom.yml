@@ -54,7 +54,7 @@ scrape_configs:
 # ONE641 demo setup for monitoring of temperature and power consumption data using node exporter
   - job_name: 'one641 node-exporter'
     static_configs:
-    - targets: ['192.168.60.93:9100']
+    - targets: ['192.168.60.96:9100']
       labels:
         job: 'One641'
         type: 'A'
