@@ -60,9 +60,8 @@ scrape_configs:
         type: 'A'
         port: 9100    
 
-        # This section defines recording and alerting rules.
+# This section defines recording and alerting rules.        
 rules:
-  # Recording rule example (copies data from one metric to another with a transformation)
   - record: power_usage_watts_total
     expr: sum(node_hwmon_power_watt{chip!="unknown"}) * 60
     lan: exemplars
