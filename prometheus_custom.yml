@@ -66,13 +66,3 @@ rules:
   - record: power_usage_watts_total
     expr: sum(node_hwmon_power_watt{chip!="unknown"}) * 60
     lan: exemplars
-
-  # Alerting rule example (sends an alert if CPU usage exceeds 80% for 5 minutes)
-  - alert: High_CPU_Usage
-    expr: node_load1 > 0.8
-    for: 5m
-    labels:
-      severity: critical
-    annotations:
-      summary: High CPU Usage Detected
-      description: CPU load on {{ instance }} has been above 80% for more than 5 minutes.
