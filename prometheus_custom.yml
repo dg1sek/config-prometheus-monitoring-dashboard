@@ -23,7 +23,7 @@ scrape_configs:
 
   - job_name: 'SNMP ONE621'
     static_configs:
-    - targets: ['192.168.2.99']
+    - targets: ['192.168.60.96']
       labels:
         job: 'One621'
     metrics_path: /snmp
@@ -35,11 +35,11 @@ scrape_configs:
       - source_labels: [__param_target]
         target_label: instance
       - target_label: __address__
-        replacement: 192.168.2.1:9116  # The SNMP exporter's real hostname:port.     
+        replacement: 192.168.4.1:9116  # The SNMP exporter's real hostname:port.     
 
   - job_name: netflow-exporter
     static_configs:
-      - targets: ['192.168.2.1:9438'] # Replace with actual hostname/IP if different
+      - targets: ['192.168.60.96:9438'] # Replace with actual hostname/IP if different
     
 #  - job_name: 'dockerd-exporter'
 #    dns_sd_configs:
@@ -48,7 +48,7 @@ scrape_configs:
 #        type: 'A'
 #        port: 9323
 
-  - job_name: 'local node-exporter'
+  - job_name: 'ONE2560-5G local node-exporter'
     dns_sd_configs:
       - names:
           - 'node-exporter'
@@ -57,7 +57,7 @@ scrape_configs:
 
   - job_name: 'one641 node-exporter'
     static_configs:
-    - targets: ['192.168.2.97:9100']
+    - targets: ['192.168.60.93:9100']
       labels:
         job: 'One641'
         type: 'A'
