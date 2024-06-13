@@ -18,7 +18,7 @@ scrape_configs:
 # Gather SNMP data from the ONE621 on my desk
   - job_name: 'SNMP ONE621'
     static_configs:
-    - targets: ['192.168.60.96']
+    - targets: ['192.168.60.97']
       labels:
         job: 'One621'
     metrics_path: /snmp
@@ -35,7 +35,7 @@ scrape_configs:
 # Gather Netflow data from ONE621 on my desk
   - job_name: netflow-exporter
     static_configs:
-      - targets: ['192.168.60.96:9438'] # Replace with actual hostname/IP if different
+      - targets: ['192.168.60.97:9438'] # Replace with actual hostname/IP if different
     
 #  - job_name: 'dockerd-exporter'
 #    dns_sd_configs:
